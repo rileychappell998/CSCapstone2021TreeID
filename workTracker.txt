@@ -7,7 +7,8 @@
 - Hosted django site with postgres database, queries are working (with limited robustness)
 - Changed "is from plant family" to "is in the plant family" in ID_response.html
 - Capitalized Latitude and Longitude in ID_response.html
-
+- Removed "This is Tree "xyz" " from information paragraph in ID_response.html
+- Added period to end of memorial person sentence in ID_response.html
 
 
 Questions:
