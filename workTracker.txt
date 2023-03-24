@@ -5,6 +5,9 @@
 - Added tree-csv-import.py script, this is for importing csv data into postgres database
 - Imported data from .csv via python script to postgres database
 - Hosted django site with postgres database, queries are working (with limited robustness)
+- Changed "is from plant family" to "is in the plant family" in ID_response.html
+- Capitalized Latitude and Longitude in ID_response.html
+
 
 
 Questions:
