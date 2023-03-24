@@ -1,0 +1,23 @@
+# A bullet point list of the work I've (Riley Chappell) completed on the treeID project.
+# Not neccesarily in chronological order, but close.
+
+- Added settings.py file for Django
+- Added tree-csv-import.py script, this is for importing csv data into postgres database
+- Imported data from .csv via python script to postgres database
+- Hosted django site with postgres database, queries are working (with limited robustness)
+
+
+Questions:
+- in csv file, there are two fields both named 'Tree_Height_ft_min' (assuming one should be '..._min'), in cleaned_data.sql this has been fixed.
+==> should I change the .csv file header name to reflect this?
+==> what I had to do was rename all fields in the .csv importer to match the names in the models.py file, so I ended up using height_min and
+    height_max in the importer file.
+==> ! I see lots of poor/inconsistent naming conventions. I'm not sure if just sticking with them is the best course of action, or should I rename
+    ! them to something I think would work better/more logically in the long run?
+
+Issues found:
+- Entry U16 ==> memorial_person field is "Donated by: Dorothy Knudsenÿ"
+==> this is not a correct entry, add another field for donated trees?
+- Memorial trees ==> all memorial tree entries on site are incorrectly formatted "This is a memorial tree for Y Kyle Martz."
+==> the id_response.html uses a context_dict method to access, and this is accessing more data than needed
+==> solution: adjust reference to just include the name of memorial memorial_person
