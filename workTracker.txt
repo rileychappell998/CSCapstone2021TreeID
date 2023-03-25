@@ -9,6 +9,7 @@
 - Capitalized Latitude and Longitude in ID_response.html
 - Removed "This is Tree "xyz" " from information paragraph in ID_response.html
 - Added period to end of memorial person sentence in ID_response.html
+- Cast the leaf_fall field in ID_response.html to be lowercase (evergreen and deciduous)
 
 
 Questions:
