@@ -5,13 +5,13 @@ class QueryForm(forms.Form):
     query = forms.CharField(label='Tree ID', max_length=5)
 
 class QueryForm2(forms.Form):
+	zone = forms.CharField(label='Landscape Zone (A-V)', max_length=1, widget=forms.TextInput(attrs = {'placeholder' : "A"}), required = False)
 	name = forms.CharField(label='Common Name', widget=forms.TextInput(attrs = {'placeholder' : "Eastern Redbud"}), required = False)
-	zone = forms.CharField(label='Zone (A-V)', max_length=1, widget=forms.TextInput(attrs = {'placeholder' : "A"}), required = False)
+	species = forms.CharField(label='Full Latin Name', widget=forms.TextInput(attrs = {'placeholder' : "Cercis canadensis"}), required = False)
+	genus = forms.CharField(label='Genus', widget=forms.TextInput(attrs = {'placeholder' : "Cercis"}), required = False)
+	family = forms.CharField(label='Family', widget=forms.TextInput(attrs = {'placeholder' : "Fabaceae"}), required = False)
 	leaf_fall = forms.ChoiceField(label = "Leaf Fall", choices=[('', ''), ('Deciduous', 'Deciduous'), ('Evergreen', 'Evergreen')], required = False)
 	group = forms.CharField(label='Group', widget=forms.TextInput(attrs = {'placeholder' : "Broadleaf"}), required = False)
-	species = forms.CharField(label='Species Name', widget=forms.TextInput(attrs = {'placeholder' : "Cercis canadensis"}), required = False)
-	genus = forms.CharField(label='Genus', widget=forms.TextInput(attrs = {'placeholder' : "Cercis"}), required = False)
-	family = forms.CharField(label='Family Name', widget=forms.TextInput(attrs = {'placeholder' : "Fabaceae"}), required = False)
 	memorial = forms.ChoiceField(label='Memorial Tree?', choices=[('', ''), (True, 'yes'), (False, 'no')], required = False)
 	champion = forms.ChoiceField(label='Champion Tree?', choices=[('', ''), (True, 'yes'), (False, 'no')], required = False)
 	bl_native = forms.ChoiceField(label='Blue Mountain Native?', choices=[('', ''), (True, 'yes'), (False, 'no')], required = False)
