@@ -10,6 +10,8 @@
 - Removed "This is Tree "xyz" " from information paragraph in ID_response.html
 - Added period to end of memorial person sentence in ID_response.html
 - Cast the leaf_fall field in ID_response.html to be lowercase (evergreen and deciduous)
+- (viz. above note) Added logic to change grammar on output depending if evergreen or deciduous ("is an evergreen" vs "is deciduous")
+
 
 
 Questions:

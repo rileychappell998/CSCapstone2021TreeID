@@ -9,8 +9,12 @@
     {% if context_dict.group_%}
         It is a context_dict.group_. 
     {% endif %}
-    {% if context_dict.leaf_fall %}
+    {% if context_dict.leaf_fall %}        
+        {% if context_dict.leaf_fall == "Evergreen"%}
+        It is an {{context_dict.leaf_fall|lower}}.
+        {%else%}
         It is {{context_dict.leaf_fall|lower}}.
+        {% endif%}
     {% endif %}
     {% if context_dict.name %}
         Its common name is {{context_dict.name}}.
