@@ -12,6 +12,7 @@
 - Cast the leaf_fall field in ID_response.html to be lowercase (evergreen and deciduous)
 - (viz. above note) Added logic to change grammar on output depending if evergreen or deciduous ("is an evergreen" vs "is deciduous")
 - Reordered Advanced Query inputs by changing order in forms.py, also changed "Species Name" => "Full Latin Name", and "Family Name" => "Family"
+- Added "these data are being reconfigured" to Blue Mountain Native and Pacific Slope Native response fields.
 
 
 Questions:
