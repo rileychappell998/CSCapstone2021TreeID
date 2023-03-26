@@ -6,7 +6,7 @@
 - Imported data from .csv via python script to postgres database
 - Hosted django site with postgres database, queries are working (with limited robustness)
 - Changed "is from plant family" to "is in the plant family" in ID_response.html
-- Capitalized Latitude and Longitude in ID_response.html
+- Capitalized Latitude and Longitude in ID_response.html and advanced_query_response.html
 - Removed "This is Tree "xyz" " from information paragraph in ID_response.html
 - Added period to end of memorial person sentence in ID_response.html
 - Cast the leaf_fall field in ID_response.html to be lowercase (evergreen and deciduous)
@@ -29,3 +29,4 @@ Issues found:
 - Memorial trees ==> all memorial tree entries on site are incorrectly formatted "This is a memorial tree for Y Kyle Martz."
 ==> the id_response.html uses a context_dict method to access, and this is accessing more data than needed
 ==> solution: adjust reference to just include the name of memorial memorial_person
+==> discovery!: the .csv has the "y" before each name in the field - this should be cleaned
