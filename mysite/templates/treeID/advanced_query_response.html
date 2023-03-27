@@ -4,6 +4,30 @@
     <h2 class="hdr2">Advanced Query Response</h2>
 {%endblock%}
 {%block content%}
+    <p>
+        <label for="treeOrder">Response order selection:</label>
+        <select name="treeOrder" id="treeOrder">
+            <option value="id">
+                Tree ID
+            </option>
+            <option value="name" {% ifequal treeOrder "name" %}selected{% endifequal %}>
+                Common name
+            </option>
+            <option value="species_name" {% ifequal treeOrder "species_name" %}selected{% endifequal %}>
+                Species name
+            </option>
+        </select>
+        <script>
+            const selectElement = document.querySelector("#treeOrder");
+            
+            selectElement.addEventListener("change", (event) => {
+                const treeOrder = event.target.value;
+                const params = new URLSearchParams(window.location.search);
+                params.set("treeOrder", treeOrder)
+                window.location.search = params.toString();
+            });
+        </script>
+    </p>
     <div id="tree_list">
         {% for tree in trees %}
             <div id="tree_list_entry">

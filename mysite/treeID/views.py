@@ -112,7 +112,15 @@ def index2(request):
         treedata=treedata.filter(is_pacific_slope_native=pc_nativei)
     if not treedata.exists():
         return render(request, 'invalid_input.html', queryContext)
-    treedata=treedata.order_by('zone', 'number')
+    treeOrder = str(request.GET.get('treeOrder'))
+    if treeOrder == "name":
+        treedata=treedata.order_by('name', 'zone', 'number')
+    elif treeOrder == "species_name":
+        treedata=treedata.order_by('species_name', 'zone', 'number')
+    else:
+        treedata=treedata.order_by('zone', 'number')
+
+    
     trees= list(treedata.values("id", "group_field", "latitude", "longitude", "leaf_fall", "name", "genus", "species_name", "family", "is_champion", "is_memorial", "is_blue_mtn_native", "is_pacific_slope_native", "memorial_person"))
 
     for tree in trees:
@@ -122,7 +130,7 @@ def index2(request):
         else:
             photo=None
         tree["photo"] = photo        
-    return TemplateResponse(request, 'advanced_query_response.html', {"trees":trees})
+    return TemplateResponse(request, 'advanced_query_response.html', {"trees":trees, "treeOrder":treeOrder})
 
 def comment_handler(request):
     context = {
