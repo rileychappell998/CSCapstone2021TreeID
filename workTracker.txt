@@ -13,6 +13,7 @@
 - (viz. above note) Added logic to change grammar on output depending if evergreen or deciduous ("is an evergreen" vs "is deciduous")
 - Reordered Advanced Query inputs by changing order in forms.py, also changed "Species Name" => "Full Latin Name", and "Family Name" => "Family"
 - Added "these data are being reconfigured" to Blue Mountain Native and Pacific Slope Native response fields.
+- Capitalized 'yes' and 'no' for some query fields in Advanced Query page (forms.py)
 
 
 Questions:
@@ -30,3 +31,8 @@ Issues found:
 ==> the id_response.html uses a context_dict method to access, and this is accessing more data than needed
 ==> solution: adjust reference to just include the name of memorial memorial_person
 ==> discovery!: the .csv has the "y" before each name in the field - this should be cleaned
+
+
+TODO:
+-Google fonts ==> find font (professional)
+--tools to place font into repo

@@ -2,13 +2,32 @@
 <html lang="en">
 <head>
     <style>
-        body {background-color: rgb(0, 40, 104);}
-        h1   {color: white;}
+        body {
+            background-color: rgb(0, 40, 104);
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 6em;
+        }
+        main {
+            max-width: 1024px;
+            margin: auto;
+            padding: 1em;
+        }
+        h1   {
+            color: white;
+            text-align: center;
+        }
         .hdr2   {color: white;}
         h3   {color: white;}
         h4   {color: white;}
         p    {color: white;}
         li    {color: white;}
+        label {
+            padding-right: 0.5em;
+        }
+        input{
+            padding: 0.25em 0.5em;
+        }
+
         #tree_list{
             width: 100%;
             padding: 0px 4px 0px 4px;
@@ -38,7 +57,11 @@
         .header_box {
             background-color: #333;
         }
-
+        .query_form_wrapper {
+            text-align: center;
+            margin-top: 6em;
+            margin-bottom: 6em;
+        }
         .query_form {
             color: white;
         }
@@ -54,6 +77,10 @@
             padding: 0;
             overflow: hidden;
             background-color: #333;
+            position: absolute;
+            width: 100vw;
+            left: 0px;
+            top: 0px;
         }
 
         .bar_item {
@@ -79,6 +106,10 @@
         .form_table_div{
             width: 100%;
             padding: 4px 8px;
+        }
+
+        .form_table_div th{
+            text-align: right;
         }
         
         .treephoto {width: 100%; max-width:max-content;}
@@ -107,16 +138,22 @@
 
 <body>
     {% block sidebar %}
-    <ul id="navigation_bar">
-        <li class="bar_item {% block navq %}{% endblock navq %}"><a class="bar_link" href="/treeID/query/">Query</a></li>
-        <li class="bar_item {% block nava %}{% endblock nava %}"><a class="bar_link" href="/treeID/advanced_query/">Advanced Query</a></li>
-        <li class="bar_item {% block navc %}{% endblock navc %}"><a class="bar_link" href="/treeID/comment/">Comment</a></li>
-    </ul> 
+    <nav>
+        <ul id="navigation_bar">
+            <li class="bar_item {% block navq %}{% endblock navq %}"><a class="bar_link" href="/treeID/query/">Query</a></li>
+            <li class="bar_item {% block nava %}{% endblock nava %}"><a class="bar_link" href="/treeID/advanced_query/">Advanced Query</a></li>
+            <li class="bar_item {% block navc %}{% endblock navc %}"><a class="bar_link" href="/treeID/comment/">Comment</a></li>
+        </ul> 
+    </nav>
     {% endblock sidebar%}
-    <h1>Whitman College Tree Information</h1>
-    {% block header %}
-    {% endblock header %}
-    {% block content %}
-    {% endblock content %}
+    <main>
+        <h1>Whitman College Tree Information</h1>
+        <div class="{%block contentClass%}{%endblock%}">
+            {% block header %}
+            {% endblock header %}
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </main>
 </body>
 </html>
